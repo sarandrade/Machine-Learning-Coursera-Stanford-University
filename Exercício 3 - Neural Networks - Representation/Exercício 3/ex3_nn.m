@@ -54,6 +54,11 @@ fprintf('\nLoading Saved Neural Network Parameters ...\n')
 % Load the weights into variables Theta1 and Theta2
 load('ex3weights.mat');
 
+% The matrices Theta1 and Theta2 will now be in your Octave
+% environment
+% Theta1 has size 25 x 401
+% Theta2 has size 10 x 26
+
 %% ================= Part 3: Implement Predict =================
 %  After training the neural network, we would like to use it to predict
 %  the labels. You will now implement the "predict" function to use the
@@ -87,4 +92,3 @@ for i = 1:m
       break
     end
 end
-
