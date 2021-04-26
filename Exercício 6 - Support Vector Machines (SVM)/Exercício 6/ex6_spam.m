@@ -14,7 +14,6 @@
 %
 %  For this exercise, you will not need to change any code in this file,
 %  or any other files other than those mentioned above.
-%
 
 %% Initialization
 clear ; close all; clc
@@ -92,14 +91,12 @@ p = svmPredict(model, Xtest);
 fprintf('Test Accuracy: %f\n', mean(double(p == ytest)) * 100);
 pause;
 
-
 %% ================= Part 5: Top Predictors of Spam ====================
 %  Since the model we are training is a linear SVM, we can inspect the
 %  weights learned by the model to understand better how it is determining
 %  whether an email is spam or not. The following code finds the words with
 %  the highest weights in the classifier. Informally, the classifier
 %  'thinks' that these words are the most likely indicators of spam.
-%
 
 % Sort the weights and obtin the vocabulary list
 [weight, idx] = sort(model.w, 'descend');
@@ -125,7 +122,7 @@ pause;
 % Set the file to be read in (change this to spamSample2.txt,
 % emailSample1.txt or emailSample2.txt to see different predictions on
 % different emails types). Try your own emails as well!
-filename = 'spamSample1.txt';
+filename = 'emailSample2.txt';
 
 % Read and predict
 file_contents = readFile(filename);
@@ -135,4 +132,3 @@ p = svmPredict(model, x);
 
 fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
 fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
-
