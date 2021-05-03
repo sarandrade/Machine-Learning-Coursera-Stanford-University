@@ -13,7 +13,6 @@
 %
 %  For this exercise, you will not need to change any code in this file,
 %  or any other files other than those mentioned above.
-%
 
 %% Initialization
 clear ; close all; clc
@@ -21,11 +20,10 @@ clear ; close all; clc
 %% ================== Part 1: Load Example Dataset  ===================
 %  We start this exercise by using a small dataset that is easy to
 %  visualize.
-%
+
 %  Our example case consists of 2 network server statistics across
 %  several machines: the latency and throughput of each machine.
 %  This exercise will help us find possibly faulty (or very fast) machines.
-%
 
 fprintf('Visualizing example dataset for outlier detection.\n\n');
 
@@ -42,7 +40,6 @@ ylabel('Throughput (mb/s)');
 fprintf('Program paused. Press enter to continue.\n');
 pause
 
-
 %% ================== Part 2: Estimate the dataset statistics ===================
 %  For this exercise, we assume a Gaussian distribution for the dataset.
 %
@@ -50,7 +47,7 @@ pause
 %  then compute the probabilities for each of the points and then visualize 
 %  both the overall distribution and where each of the points falls in 
 %  terms of that distribution.
-%
+
 fprintf('Visualizing Gaussian fit.\n\n');
 
 %  Estimate my and sigma2
@@ -71,7 +68,6 @@ pause;
 %% ================== Part 3: Find Outliers ===================
 %  Now you will find a good epsilon threshold using a cross-validation set
 %  probabilities given the estimated Gaussian distribution
-% 
 
 pval = multivariateGaussian(Xval, mu, sigma2);
 
@@ -96,7 +92,6 @@ pause;
 %  We will now use the code from the previous part and apply it to a 
 %  harder problem in which more features describe each datapoint and only 
 %  some features indicate whether a point is an outlier.
-%
 
 %  Loads the second dataset. You should now have the
 %  variables X, Xval, yval in your environment
